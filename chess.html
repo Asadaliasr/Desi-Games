@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess - Desi Games</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/chess.css">
+</head>
+<body>
+    <header>
+        <!-- Same header as index.html -->
+    </header>
+
+    <main class="game-container">
+        <section class="game-header">
+            <h1>Chess</h1>
+            <p>The classic strategy game for 2 players</p>
+        </section>
+
+        <section class="chess-game-area">
+            <div class="chess-board-container">
+                <div id="chessBoard"></div>
+            </div>
+            
+            <div class="chess-controls">
+                <div class="player-info">
+                    <div class="player-turn">White's Turn</div>
+                    <div class="game-status">Game in progress</div>
+                </div>
+                
+                <div class="game-actions">
+                    <button id="startGame" class="btn">New Game</button>
+                    <button id="playWithAI" class="btn secondary">Play vs AI</button>
+                    <button id="inviteFriend" class="btn secondary">Invite Friend</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Same footer as index.html -->
+    </footer>
+
+    <script src="js/chess.js"></script>
+    <script src="js/ai.js"></script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play Ludo Online | Desi Games</title>
+    <meta name="description" content="Play Ludo online with friends or AI. Real-time multiplayer Ludo game for 2-4 players.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/ludo.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="images/favicon.png">
+    <!-- Google Adsense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_PUBLISHER_ID"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.png" alt="Desi Games" class="responsive-img">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="ludo.html" class="active">Ludo</a></li>
+                    <li><a href="chess.html">Chess</a></li>
+                    <li><a href="pool.html">8 Ball Pool</a></li>
+                    <li><a href="carrom.html">Carrom</a></li>
+                </ul>
+            </nav>
+            <div class="lang-switcher">
+                <select id="language">
+                    <option value="en">English</option>
+                    <option value="ur">اردو</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <main class="game-container">
+        <!-- Game Header -->
+        <section class="game-header">
+            <div class="container">
+                <h1>Ludo</h1>
+                <p>Play with friends or challenge our AI</p>
+                
+                <!-- Google Ad Banner -->
+                <div class="ad-container">
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-YOUR_PUBLISHER_ID"
+                         data-ad-slot="YOUR_AD_SLOT"
+                         data-ad-format="auto"
+                         data-full-width-responsive="true"></ins>
+                    <script>
+                         (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+            </div>
+        </section>
+
+        <!-- Game Area -->
+        <section class="game-area">
+            <div class="container">
+                <div class="game-controls">
+                    <div class="players-info">
+                        <div class="player" data-color="red">
+                            <div class="color-indicator"></div>
+                            <span class="player-name">Player 1 (You)</span>
+                            <span class="player-status">Ready</span>
+                        </div>
+                        <div class="player" data-color="green">
+                            <div class="color-indicator"></div>
+                            <span class="player-name">AI (Medium)</span>
+                            <span class="player-status">Thinking...</span>
+                        </div>
+                        <div class="player" data-color="yellow">
+                            <div class="color-indicator"></div>
+                            <span class="player-name">Empty Slot</span>
+                            <span class="player-status">Invite</span>
+                        </div>
+                        <div class="player" data-color="blue">
+                            <div class="color-indicator"></div>
+                            <span class="player-name">Empty Slot</span>
+                            <span class="player-status">Invite</span>
+                        </div>
+                    </div>
+                    
+                    <div class="game-actions">
+                        <button id="start-game" class="btn">Start Game</button>
+                        <button id="invite-friends" class="btn secondary">Invite Friends</button>
+                        <button id="ai-settings" class="btn secondary">AI Settings</button>
+                        <button id="game-settings" class="btn secondary">Game Settings</button>
+                    </div>
+                    
+                    <div class="dice-container">
+                        <div class="dice" id="dice">
+                            <span class="dice-value">6</span>
+                        </div>
+                        <button id="roll-dice" class="btn" disabled>Roll Dice</button>
+                    </div>
+                </div>
+                
+                <div class="game-board" id="game-board">
+                    <!-- Ludo board will be rendered here by JavaScript -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/logo-white.png" alt="Desi Games" class="responsive-img">
+                    <p>Bringing classic games to the digital world</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Games</h3>
+                    <ul>
+                        <li><a href="ludo.html">Ludo</a></li>
+                        <li><a href="chess.html">Chess</a></li>
+                        <li><a href="pool.html">8 Ball Pool</a></li>
+                        <li><a href="carrom.html">Carrom</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Desi Games. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/ludo.js"></script>
+    <script>
+        // Initialize Ludo game
+        document.addEventListener('DOMContentLoaded', function() {
+            const ludoGame = new LudoGame({
+                boardElement: document.getElementById('game-board'),
+                diceElement: document.getElementById('dice'),
+                rollButton: document.getElementById('roll-dice'),
+                startButton: document.getElementById('start-game'),
+                players: [
+                    { id: 1, name: 'Player 1', color: 'red', isHuman: true },
+                    { id: 2, name: 'AI (Medium)', color: 'green', isHuman: false }
+                ]
+            });
+            
+            // Initialize AI
+            const ludoAI = new LudoAI(ludoGame);
+            
+            // Set up game controls
+            document.getElementById('roll-dice').addEventListener('click', function() {
+                ludoGame.rollDice();
+            });
+            
+            document.getElementById('start-game').addEventListener('click', function() {
+                ludoGame.startGame();
+            });
+        });
+    </script>
+</body>
+</html>

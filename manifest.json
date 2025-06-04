@@ -1,0 +1,22 @@
+{
+  "name": "Desi Games",
+  "short_name": "DesiGames",
+  "description": "Play classic multiplayer games online - Ludo, Chess, 8 Ball Pool, and Carrom",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#4a148c",
+  "theme_color": "#4a148c",
+  "icons": [
+    {
+      "src": "images/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "images/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "orientation": "portrait-primary"
+}

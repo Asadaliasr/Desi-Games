@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8 Ball Pool - Desi Games</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pool.css">
+</head>
+<body>
+    <header>
+        <!-- Same header as index.html -->
+    </header>
+
+    <main class="game-container">
+        <section class="game-header">
+            <h1>8 Ball Pool</h1>
+            <p>Play against friends or challenge our AI</p>
+        </section>
+
+        <section class="pool-game-area">
+            <div class="pool-table">
+                <canvas id="poolCanvas"></canvas>
+            </div>
+            
+            <div class="pool-controls">
+                <div class="player-info">
+                    <div class="player-turn">Your Turn</div>
+                    <div class="power-meter">
+                        <input type="range" id="powerSlider" min="0" max="100">
+                        <button id="takeShot">Take Shot</button>
+                    </div>
+                </div>
+                
+                <div class="game-actions">
+                    <button id="startGame" class="btn">Start Game</button>
+                    <button id="inviteFriend" class="btn secondary">Invite Friend</button>
+                    <button id="aiDifficulty" class="btn secondary">AI Difficulty</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Same footer as index.html -->
+    </footer>
+
+    <script src="js/pool.js"></script>
+</body>
+</html>
