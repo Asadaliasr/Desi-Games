@@ -71,20 +71,6 @@
             font-weight: 700;
         }
 
-        .language-selector {
-            background: rgba(255, 255, 255, 0.2);
-            border: none;
-            padding: 5px 10px;
-            border-radius: 20px;
-            color: white;
-            cursor: pointer;
-        }
-
-        .language-selector option {
-            background: var(--primary);
-            color: white;
-        }
-
         /* Navigation */
         nav ul {
             display: flex;
@@ -564,12 +550,6 @@
                     <li><a href="#games">Games</a></li>
                     <li><a href="#features">Features</a></li>
                     <li><a href="#how-to-play">How to Play</a></li>
-                    <li>
-                        <select class="language-selector">
-                            <option value="en">English</option>
-                            <option value="ur">اردو</option>
-                        </select>
-                    </li>
                 </ul>
             </nav>
         </div>
@@ -727,18 +707,18 @@
                 
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-language"></i>
-                    </div>
-                    <h3>Urdu/English</h3>
-                    <p>Switch between English and Urdu interfaces to play in your preferred language.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
                         <i class="fas fa-trophy"></i>
                     </div>
                     <h3>Tournaments</h3>
                     <p>Compete in daily and weekly tournaments to win exciting prizes and climb the leaderboards.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Safe & Secure</h3>
+                    <p>Your data and privacy are protected with our secure gaming platform.</p>
                 </div>
             </div>
         </div>
@@ -885,13 +865,6 @@
         
         mobileMenuBtn.addEventListener('click', () => {
             mainNav.classList.toggle('active');
-        });
-        
-        // Language Selector
-        const languageSelector = document.querySelector('.language-selector');
-        languageSelector.addEventListener('change', (e) => {
-            // In a real implementation, this would change the language
-            alert(`Language changed to ${e.target.value === 'en' ? 'English' : 'Urdu'}`);
         });
         
         // Game Play Buttons
